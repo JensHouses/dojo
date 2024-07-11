@@ -1,4 +1,5 @@
 {% from "macros/widgets.html" import navitem %}
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <div id="result-message" class="alert fixed-top d-none">
        <span>Error or Success MSG</span>
@@ -115,7 +116,7 @@
             </span>
           </a>
         </li>
-        {{ navitem("Workspace", url_for("pwncollege_workspace.view_workspace", service="vscode"), "fa-terminal") }}
+        {{ navitem("Workspace", url_for("pwncollege_workspace.view_workspace", service="code"), "fa-terminal") }}
         {{ navitem("Desktop", url_for("pwncollege_workspace.view_workspace", service="desktop"), "fa-desktop") }}
         {{ navitem("Help", url_for("pwncollege_sensai.view_sensai"), "fa-question") }}
         {{ navitem("Chat", "https://discord.gg/pwncollege", "fa-comments", new=True) }}
@@ -160,6 +161,3 @@
 <div class="navbar-pulldown">
   <i class="fas fa-fw fa-caret-down" title="Show navigation bar"></i>
 </div>
-
-{% block scripts %}
-{% endblock %}
