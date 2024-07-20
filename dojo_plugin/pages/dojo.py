@@ -15,7 +15,7 @@ from CTFd.utils.helpers import get_infos
 from CTFd.cache import cache
 
 from ..utils import render_markdown
-from ..utils.stats import container_stats
+from ..utils.stats import container_stats, dojo_stats
 from ..utils.dojo import dojo_route, get_current_dojo_challenge, get_prev_cur_next_dojo_challenge, dojo_update, dojo_admins_only
 from ..models import Dojos, DojoUsers, DojoStudents, DojoModules, DojoMembers, DojoChallenges
 
@@ -49,7 +49,7 @@ def listing(dojo):
     infos = get_infos()
     user = get_current_user()
     dojo_user = DojoUsers.query.filter_by(dojo=dojo, user=user).first()
-    stats = get_stats(dojo)
+    stats = dojo_stats(dojo)
     awards = dojo.awards()
     return render_template(
         "dojo.html",
