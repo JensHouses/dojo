@@ -1,9 +1,6 @@
 {% from "macros/widgets.html" import navitem %}
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <div id="result-message" class="alert fixed-top d-none">
-       <span>Error or Success MSG</span>
-  </div>
   <div class="container">
     <a href="{{ url_for('views.static_html', route='/') }}" class="navbar-brand">
       {% if Configs.ctf_logo %}
@@ -108,14 +105,6 @@
         </li>
 
         {{ navitem("Dojos", url_for("pwncollege_dojos.listing"), "fa-torii-gate") }}
-        <li id="SubmitFlagButton" class="nav-item d-none">
-          <a class="nav-link" href="#">
-            <span class="d-sm-block d-md-none d-lg-block text-nowrap">
-              <i class="fas fa-flag"></i>
-            Submit Flag
-            </span>
-          </a>
-        </li>
         {{ navitem("Workspace", url_for("pwncollege_workspace.view_workspace", service="code"), "fa-terminal") }}
         {{ navitem("Desktop", url_for("pwncollege_workspace.view_workspace", service="desktop"), "fa-desktop") }}
         {{ navitem("Help", url_for("pwncollege_sensai.view_sensai"), "fa-question") }}
